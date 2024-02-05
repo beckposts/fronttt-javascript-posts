@@ -5,16 +5,20 @@ date: '2024-01-15'
 tags: ['journal', 'money']
 ---
 
-This is the code syntax testing
+Sandpack Testing
 
-```javascript
-
-console.log("Hello World")
-
-if(a>b){
-    console.log('Your are dumb')
-}else{
-    console.log('You are not dumb')
+<Sandpack options={{ showLineNumbers: true, showTabs: true }} template="react-ts">
+```tsx App.tsx
+import './styles.css'
+export default function App(): JSX.Element {
+  return <h1>Hello MDX + Sandpack</h1>
 }
-
 ```
+
+```css styles.css file=styles/globals.css readonly
+h1 {
+  background: #ccffcc;
+}
+```
+
+</Sandpack>
