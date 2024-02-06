@@ -1,0 +1,61 @@
+---
+title: "Formatting Date & Time In JavaScript"
+description: "How to format a date in JavaScript"
+date: '2024-02-06'
+tags: ['date']
+---
+
+Formatting a date in JavaScript is quite easy. 
+
+There can be different ways you can do it. I like to create a separate function for formatting.
+
+## Create a function for formatting date
+
+This function will accept a date string.
+
+```javascript
+function formatDate(dateString){
+   return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(dateString));
+}
+```
+
+Here is the example for commonly used date format. Format Month in 3 Characters.
+
+<CodeEditor markdownCode={`
+
+function formatDate(dateString){
+    return new Intl.DateTimeFormat('en-US', { dateStyle: 'medium' }).format(new Date(dateString));
+}
+
+console.log(formatDate('2024-03-06'))
+
+`} />
+
+You can fully customize it as you want. Let's first see the date style property.
+
+## dateStyle Properties For Formatting Date
+
+dateStyle has 4 Properties, 'full', 'long', 'medium' and 'short'.
+
+```
+dateStyle: 'full'  // Wednesday, March 6, 2024
+
+DateStyle: 'long'  // March 6, 2024
+
+dateStyle: 'medium' // Mar 6, 2024
+
+dateStyle: 'short' // 3/6/24
+```
+
+Change dateStyle properties below and run the code to see the output.
+
+<CodeEditor markdownCode={`
+
+function formatDate(dateString){
+    return new Intl.DateTimeFormat('en-US', { dateStyle: 'long' }).format(new Date(dateString));
+}
+
+console.log(formatDate('2024-03-06'))
+
+`} />
+
