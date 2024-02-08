@@ -114,6 +114,31 @@ console.log("Updated Date:", date);
 
 `} />
 
+## Calculating with Dates
+
+Here is the example of how to find the difference between two dates in in JavaScript.
+
+<CodeEditor id={4} markdownCode={`
+const start = new Date('2023-10-01');
+const end = new Date('2024-02-08');
+const difference = end - start; // Difference in milliseconds
+const daysDifference = difference / (1000 * 60 * 60 * 24);
+console.log("Difference In Days:", daysDifference);
+`} />
+
+## Adding to a Date
+
+Here is how you can add days to date. 
+
+<CodeEditor id={4} markdownCode={`
+const date = new Date('2024-02-08');
+const oldDate = date.getDate();
+
+date.setDate(date.getDate() + 10); // Add Days, I added 10 days to the date
+console.log("Old Date:", oldDate);
+console.log("New Date:", date.getDate());
+`} />
+
 ## Formatting Date & Time In JavaScript
 
 Formatting a date in JavaScript is quite easy. 
@@ -129,19 +154,20 @@ BTW I find it easier to use `Intl.DateTimeFormat` to format dates and times.
 Here is the example of basic formatting or you can say manual formatting. 
 
 <CodeEditor id={4} markdownCode={`
+
 const now = new Date();
 
 const formattedDate1 = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
-const formattedDate2 = (now.getMonth() + 1) + now.getDate() + '-' + now.getFullYear();
+const formattedDate2 = (now.getMonth() + 1) + '-' + now.getDate() + '-' + now.getFullYear();
 
 console.log("Format 1:", formattedDate1);
-console.log("Format 1:", formattedDate2);
+console.log("Format 2:", formattedDate2);
 
 `} />
 
+You can set or get date, show time and do whatever type of formatting you like.
 
-
-### Create a function for formatting date
+### Create a function for formatting date With Intl.DateTimeFormat
 
 This function will accept a date string.
 
@@ -168,16 +194,11 @@ You can fully customize it as you want. Let's first see the date style property.
 ## dateStyle Properties For Formatting Date
 
 dateStyle has 4 Properties, 'full', 'long', 'medium' and 'short'.
+    - dateStyle: 'full'  // Wednesday, March 6, 2024
+    - DateStyle: 'long'  // March 6, 2024
+    - dateStyle: 'medium' // Mar 6, 2024
+    - dateStyle: 'short' // 3/6/24
 
-```
-dateStyle: 'full'  // Wednesday, March 6, 2024
-
-DateStyle: 'long'  // March 6, 2024
-
-dateStyle: 'medium' // Mar 6, 2024
-
-dateStyle: 'short' // 3/6/24
-```
 
 Change dateStyle properties below and run the code to see the output.
 
