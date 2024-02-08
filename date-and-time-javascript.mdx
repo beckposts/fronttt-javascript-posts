@@ -102,6 +102,8 @@ console.log("Day of the Month:", now.getDate());
 
 ### Setting Date Components
 
+You can set Year and months and format it in full date.
+
 <CodeEditor id={4} markdownCode={`
 let date = new Date();
 
@@ -112,13 +114,34 @@ console.log("Updated Date:", date);
 
 `} />
 
-
+## Formatting Date & Time In JavaScript
 
 Formatting a date in JavaScript is quite easy. 
 
-There can be different ways you can do it. I like to create a separate function for formatting.
+There can be different ways you can do it. I like to create a separate function for formatting you can see below.
 
-## Create a function for formatting date
+But first let's see the basic then we will also use `Intl.DateTimeFormat` a part of the Internationalization API, for more complex formatting.
+
+BTW I find it easier to use `Intl.DateTimeFormat` to format dates and times.
+
+### Basic Formatting 
+
+Here is the example of basic formatting or you can say manual formatting. 
+
+<CodeEditor id={4} markdownCode={`
+const now = new Date();
+
+const formattedDate1 = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
+const formattedDate2 = (now.getMonth() + 1) + now.getDate() + '-' + now.getFullYear();
+
+console.log("Format 1:", formattedDate1);
+console.log("Format 1:", formattedDate2);
+
+`} />
+
+
+
+### Create a function for formatting date
 
 This function will accept a date string.
 
