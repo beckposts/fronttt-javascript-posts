@@ -81,15 +81,24 @@ To get this date components first you have to create a date object.
 
 <CodeEditor id={4} markdownCode={`const now = new Date();
 
-console.log("Year:", now.getFullYear());
-console.log("Month:", now.getMonth() + 1); // +1 because January is 0
+console.log("Current Year:", now.getFullYear());
+console.log("Current Month:", now.getMonth() + 1); // +1 because January is 0
 console.log("Day of the Month:", now.getDate());
 console.log("Hour:", now.getHours());
 console.log("Minute:", now.getMinutes());
 console.log("Second:", now.getSeconds());
 `} />
 
+As you have seen earlier we can pass date string as argument in date object. 
 
+
+<CodeEditor id={4} markdownCode={`const now = new Date("2021-10-05");
+
+console.log("Current Year:", now.getFullYear());
+console.log("Current Month:", now.getMonth() + 1); // +1 because January is 0
+console.log("Day of the Month:", now.getDate());
+
+`} />
 
 
 
