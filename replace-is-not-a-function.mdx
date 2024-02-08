@@ -1,0 +1,63 @@
+---
+title: "[Solved] .replace Is Not A Function In JavaScript"
+description: ".replace is not a function occurs when you call replace() method on string. Here is example and how to fix it."
+date: '2024-02-06'
+tags: ['TypeError']
+---
+
+.replace is not a function is a TypeError and it occurs when you call `replace()` method on string. Here is example and how to fix it.
+
+```bash
+TypeError: text.replace is not a function
+    at Object.<anonymous> (/tmp/YK7v2T8MiR.js:2:19)
+    at Module._compile (node:internal/modules/cjs/loader:1256:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1310:10)
+    at Module.load (node:internal/modules/cjs/loader:1119:32)
+    at Module._load (node:internal/modules/cjs/loader:960:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:86:12)
+    at node:internal/main/run_main_module:23:47
+```
+
+
+## What is replace() function?
+
+`replace()` function searches a string for a value or a regular expression and returns a new string with the value(s) replaced. It 
+does not change the orignal value.
+
+Example below.
+
+<CodeEditor id={1} markdownCode={`
+
+
+let text = "Error : replace is not a function";
+let result = text.replace(/Error/g, "TypeError");
+
+console.log(result)
+
+
+`} />
+
+## Why TypeError: .replace is not a function occurs
+
+This error occurs when you call replace() method on a value which is not a string.
+
+Example: 
+
+This will throw an Error because we 44 is a number. 
+
+<CodeEditor id={2} markdownCode={`
+let text = 44;
+let result = text.replace(/44/g, "48");
+
+console.log(result)
+`} />
+
+## Solution
+
+The simple way to handle this to check that the value is string or not.
+
+<CodeEditor id={3} markdownCode={`
+const text = 44; // Try "44"
+const result = typeof text === 'string' ? text.replace(/44/g, "48") : 'Type must be string';
+console.log(result)
+`} />
