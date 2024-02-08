@@ -30,9 +30,9 @@ console.log(dateTimeNow);
 
 `} />
 
-### 2. Arguments In Date Objects
+### 2. Date String Arguments In Date Objects
 
-1. When you pass a date string it will parse the string into a date and time.
+When you pass a date string it will parse the string into a date and time.
 
 <CodeEditor id={2} markdownCode={`
 
@@ -43,9 +43,9 @@ console.log(date);
 
 `} />
 
-2. Passing Year, Month & Day In Date Object
+### 3. Passing Year, Month & Day In Date Object
 
-<CodeEditor id={2} markdownCode={`
+<CodeEditor id={3} markdownCode={`
 
 
 const specificDateAndTime = new Date(2024, 4, 8, 14, 30);
@@ -55,6 +55,43 @@ console.log(specificDateAndTime);
 `} />
 
 One Important thing to note is that months are zero-indexed, means month index starts with zero. Eg. Jan - 0, Feb - 1 etc..
+
+
+## Date Components In JavaScript
+
+After creating a date object you can modify or get date components like showing current year, modifying date and time etc.
+
+We can divide it into two parts.
+    - Getting Date Components
+    - Setting Date Components
+
+### Getting Date Components
+
+Here is list of Date Components you can get.
+    - getFullYear()
+    - getMonth()
+    - getDate()
+    - getHours()
+    - getMinutes()
+    - getSeconds()
+
+To get this date components first you have to create a date object.
+
+`const now = new Date();`
+
+<CodeEditor id={4} markdownCode={`const now = new Date();
+
+console.log("Year:", now.getFullYear());
+console.log("Month:", now.getMonth() + 1); // +1 because January is 0
+console.log("Day of the Month:", now.getDate());
+console.log("Hour:", now.getHours());
+console.log("Minute:", now.getMinutes());
+console.log("Second:", now.getSeconds());
+`} />
+
+
+
+
 
 Formatting a date in JavaScript is quite easy. 
 
