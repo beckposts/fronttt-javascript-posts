@@ -17,13 +17,44 @@ You can create a instance of `Date` Object in many ways.
 
 ### 1. Creating Date Object Without Arguments.
 
-`new Date()` without arguments will show current date & time. 
+`new Date()` without arguments will show current date & time. Eg. Thu Feb 08 2024 11:44:26 GMT+0530 (India Standard Time)
+
+Run the code below to see live example.
 
 <CodeEditor id={1} markdownCode={`
+
+
 const dateTimeNow = new Date();
 console.log(dateTimeNow);
+
+
 `} />
 
+### 2. Arguments In Date Objects
+
+1. When you pass a date string it will parse the string into a date and time.
+
+<CodeEditor id={2} markdownCode={`
+
+
+const date = new Date("2024-02-08");
+console.log(date); 
+
+
+`} />
+
+2. Passing Year, Month & Day In Date Object
+
+<CodeEditor id={2} markdownCode={`
+
+
+const specificDateAndTime = new Date(2024, 4, 8, 14, 30);
+console.log(specificDateAndTime);
+
+
+`} />
+
+One Important thing to note is that months are zero-indexed, means month index starts with zero. Eg. Jan - 0, Feb - 1 etc..
 
 Formatting a date in JavaScript is quite easy. 
 
