@@ -1,0 +1,97 @@
+---
+title: "4 Different Methods To Compare Dates In JavaScript"
+description: "In this post you'll will learn how to compare dates in JavaScript."
+date: '2024-02-11'
+tags: ['date']
+---
+
+We do lots of comparision while programming and comparing dates is also a common task 
+and it can be accomplished in different ways. 
+
+I'll show you 4 methods to compare date in JS.
+
+## 1. Direct Comparision Using Comparison Operators
+
+This is common & simplest method we can use. 
+
+Here the Comparison Operators in JS.
+
+```
+==, ===, >=, <=, >, <
+```
+
+Let's compare two date.
+
+<CodeEditor id={1} markdownCode={`
+
+const date1 = new Date('2024-02-10');
+const date2 = new Date('2024-02-11');
+
+console.log(date1 < date2);  // true
+console.log(date1 > date2);  // false
+console.log(date1 === date2); // false, because they are different objects
+
+`} />
+
+## 2. Comparing Time Values
+
+You can use the getTime() method to get the time value in milliseconds and compare these values.
+
+<CodeEditor id={1} markdownCode={`
+
+const date1 = new Date('2024-02-10');
+const date2 = new Date('2024-02-11');
+
+console.log(date1.getTime() === date2.getTime());  // false
+console.log(date1.getTime() < date2.getTime());    // true
+
+`} />
+
+## 3. Converting to ISO Strings or Locale Strings
+
+If you want to ignore the time part you should compare ISO or Locale string.
+
+<CodeEditor id={1} markdownCode={`
+
+const date1 = new Date('2024-02-10');
+const date2 = new Date('2024-02-11');
+
+console.log(date1.toISOString().slice(0, 10) === date2.toISOString().slice(0, 10)); // false
+console.log(date1.toLocaleDateString() === date2.toLocaleDateString()); // false
+
+
+
+`} />
+
+## 4. Compare Dates Using JS Libraries
+
+If your are using ReactJS, NextJS or any Node application you can use date libraries to 
+compare dates.
+
+You can use `date-fns` or `Day.js`. These libraries has APIs for comparing dates.
+
+### Using Day.js
+
+```reactjs
+import dayjs from 'dayjs';
+
+const date1 = dayjs('2024-02-10');
+const date2 = dayjs('2024-02-11');
+
+console.log(date1.isSame(date2)); // false
+console.log(date1.isBefore(date2)); // true
+console.log(date1.isAfter(date2)); // false
+```
+
+### Using date-fns
+
+```reactjs
+import { isEqual, isBefore, isAfter } from 'date-fns';
+
+const date1 = new Date('2024-02-10');
+const date2 = new Date('2024-02-11');
+
+console.log(isEqual(date1, date2)); // false
+console.log(isBefore(date1, date2)); // true
+console.log(isAfter(date1, date2)); // false
+```
