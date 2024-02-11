@@ -1,0 +1,65 @@
+---
+title: "Format Number With Commas Like Currency In JavaScript"
+description: "Format Number with commas in JavaScript"
+date: '2024-02-11'
+tags: ['date']
+---
+
+Formatting Number with commas is more readable. In this post I'll
+show you several ways to format numbers.
+
+We will use Intl.NumberFormat, toLocaleString() and we will create a separate
+function also.
+
+## Format Number Using Intl.NumberFormat
+
+Intl.NumberFormat is a object part of Internationalization API.
+
+Let's see how we can code.
+
+<CodeEditor id={1} markdownCode={`
+
+const number = 94858245.43;
+
+const formatNumber = new Intl.NumberFormat().format(number);
+console.log(formatNumber);
+
+`} />
+
+## Format Number Using toLocaleString()
+
+`toLocaleString()` is the best method you can use to format a Number.
+
+<CodeEditor id={2} markdownCode={`
+
+const number = 94858245.43;
+
+const formatNumber = number.toLocaleString();;
+console.log(formatNumber);
+
+`} />
+
+You just need to call the method on Number's variable. That's it.
+
+## Format Number Custom Function
+
+Here I've shown you how you can create a sepeate function to format number using Regex. Here we will not 
+use any inbuilt methods.
+
+<CodeEditor id={2} markdownCode={`
+
+function formatNumber(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+const number = 94858245.43;
+console.log(formatNumber(number));
+
+
+`} />
+
+## Conclusion
+
+I'll suggest you to use Intl.NumberFormat or toLocaleString because that are simple and easy to use.
+
+You can also create a seprate function using Intl.NumberFormat and toLocaleString.

@@ -1,6 +1,106 @@
 ---
-title: "Remove Last Character From String In JavaScript"
+title: "5 Ways To Remove Last Character From String In JavaScript"
 description: "In this post you'll will learn how to compare dates in JavaScript."
 date: '2024-02-11'
 tags: ['date']
 ---
+
+In this post I'll show you 5 Methods to Remove Last Character From String In JavaScript using 
+slice(), substring(), substr(), slice() with String.length() and split() and join().
+
+## 1. Remove Last Character Using slice() in JS
+
+How `slice()` method will work?
+
+`slice()` method will extract a section of string and it will return it as new string.
+It will not modify the orignal string. You just need to specify the start and end.
+
+Example.
+
+```javascript
+slice(0, -1)
+``` 
+
+But what that it means? So you are telling slice to remove one character before the end of the string.
+
+<CodeEditor id={1} markdownCode={`
+
+const yourString = "Remove";
+const newString = yourString.slice(0, -1);
+console.log(newString); // Prints Remov
+
+`} />
+
+## 2. Remove Last Character In JavaScript Using substring()
+
+The `substring()` method will return the part of string between the start and end index.
+So to remove last character start at `0` and end at `yourString.length -1`.
+
+<CodeEditor id={2} markdownCode={`
+
+const yourString = "Remove";
+const newString = yourString.substring(0, str.length - 1);
+console.log(newString); // Prints Remov
+
+
+`} />
+
+## 3. Remove Last Character In JavaScript Using substr()
+
+`substr(0, str.length - 1)` will remove last character, starts at 0 and uses the length of 
+string length -1 as the lenth.
+
+<CodeEditor id={3} markdownCode={`
+
+const yourString = "Remove";
+const newStr = yourString.substr(0, str.length - 1);
+console.log(newStr); // Prints Remov
+
+`} />
+
+I won't reccomend this to use because substr() is considerd as a legacy function and it is not often used in modern JavaScript.
+
+## 4. Remove Last Character Using slice() with String.length()
+
+So I've already told you at the start to how you can use slice. I just want you to tell that this is also the way.
+Funny ha?
+
+`slice(0, -1)` and `slice(0, str.length - 1)` is almost similar ha..
+
+Just we are getting the length of the string and subtracting one character from the end.
+
+<CodeEditor id={4} markdownCode={`
+
+const yourString = "Funny";
+const newString = yourString.slice(0, str.length - 1);
+console.log(newString); // Prints Funn
+
+
+`} />
+
+## 5. Remove Last Character Using Array Manipulation
+
+We will use `split()` and `join()` for this. 
+
+Note: This is not the efficient way for this task but I'm showing this beacuse there are different ways to get
+the same result.
+
+<CodeEditor id={4} markdownCode={`
+
+const yourString = "Ignore";
+const chars = yourString.split(''); // Convert string to array of characters
+chars.pop(); // Remove the last character
+const newStr = chars.join(''); // Join the array back into a string
+console.log(newStr); // Prints Ignor
+
+
+`} />
+
+Do not use this method because it includes 3 steps and it is not the efficient way.
+
+## Conclusion 
+
+To remove the last character from a string in JavaScript all the above code will work.
+You have the choice which one you're going to use and when depending on the project needs.
+
+The most straightforward way is to use `slice()`.
