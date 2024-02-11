@@ -39,7 +39,7 @@ So to remove last character start at `0` and end at `yourString.length -1`.
 <CodeEditor id={2} markdownCode={`
 
 const yourString = "Remove";
-const newString = yourString.substring(0, str.length - 1);
+const newString = yourString.substring(0, yourString.length - 1);
 console.log(newString); // Prints Remov
 
 
@@ -47,13 +47,13 @@ console.log(newString); // Prints Remov
 
 ## 3. Remove Last Character In JavaScript Using substr()
 
-`substr(0, str.length - 1)` will remove last character, starts at 0 and uses the length of 
+`substr(0, yourString.length - 1)` will remove last character, starts at 0 and uses the length of 
 string length -1 as the lenth.
 
 <CodeEditor id={3} markdownCode={`
 
 const yourString = "Remove";
-const newStr = yourString.substr(0, str.length - 1);
+const newStr = yourString.substr(0, yourString.length - 1);
 console.log(newStr); // Prints Remov
 
 `} />
@@ -72,7 +72,7 @@ Just we are getting the length of the string and subtracting one character from 
 <CodeEditor id={4} markdownCode={`
 
 const yourString = "Funny";
-const newString = yourString.slice(0, str.length - 1);
+const newString = yourString.slice(0, yourString.length - 1);
 console.log(newString); // Prints Funn
 
 
